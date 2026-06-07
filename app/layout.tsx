@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+
 
 import { GeistPixelSquare } from "geist/font/pixel";
 import { NotchNav } from "@/components/ui/notch-nav";
@@ -11,12 +11,13 @@ import { ThemeProvider } from "@/components/ui/theme-provider"
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
-type NavIcon = "home" | "dashboard" | "history" | "tarsed" | "moves";
+type NavIcon = "home" | "dashboard" | "upload" | "compare";
 
 const navItems: Array<{ value: string; label: string; href: string; icon: NavIcon }> = [
   { value: "home", label: "Home", href: "/", icon: "home" },
   { value: "dashboard", label: "Dashboard", href: "/dashboard", icon: "dashboard" },
- 
+  { value: "upload", label: "Upload", href: "/upload", icon: "upload" },
+  { value: "compare", label: "Compare", href: "/dashboard/compare", icon: "compare" },
 ];
 
 export const metadata: Metadata = {

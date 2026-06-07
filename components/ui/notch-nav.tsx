@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as React from "react";
-import { Clock3, Home, LayoutDashboard, TrendingUpDown, ClipboardList, Truck } from "lucide-react";
+import { Clock3, Home, LayoutDashboard, TrendingUpDown, Upload } from "lucide-react";
 
 import type { LucideIcon } from "lucide-react";
-import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { ThemeToggle } from "./theme";
 
-type IconName = "home" | "dashboard" | "history" | "tarsed" | "moves";
+type IconName = "home" | "dashboard" | "upload" | "compare";
 
 type Item = {
   value: string;
@@ -69,9 +69,9 @@ export function NotchNav({
   const iconMap: Record<IconName, LucideIcon> = {
   home: TrendingUpDown,
   dashboard: LayoutDashboard,
-  history: Clock3,
-  tarsed: ClipboardList,
-  moves: Truck,
+  upload: Upload,
+  compare: TrendingUpDown,
+
 };
 
   const updateNotch = React.useCallback(() => {
